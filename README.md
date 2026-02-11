@@ -30,11 +30,17 @@ I specialize in high-efficiency logic and algorithmic structures, focusing on th
     /Logic_Core: Mathematical foundations and NumPy-based data manipulations.
 
 📡 CONNECTIVITY_GATEWAYS
+
 Platform	Endpoint
+
 GitHub	@krish50507kumar
+
 LinkedIn	Krish Kumar
+
 LeetCode	Krish6399kumar
+
 Instagram	@this.is._krish
+
 ⚡ SYSTEM_STATUS
 
 Currently open to collaborations on high-efficiency backend systems or algorithmic research projects.
