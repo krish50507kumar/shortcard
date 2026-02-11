@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #0c0e14;
+            --border: #1e222c;
+            --accent-1: #4eeaff; /* Electric Cyan */
+            --accent-2: #9d5cff; /* Deep Violet */
+            --accent-3: #00ff95; /* Matrix Green */
+            --accent-4: #ff3e81; /* Neon Rose */
+            --text-main: #e2e8f0;
+            --text-dim: #64748b;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 2px 2px, #1a1d26 1px, transparent 0);
+            background-size: 32px 32px;
+            color: var(--text-main);
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-frame {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        /* Reusable Card Base */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover { border-color: var(--text-dim); }
+
+        /* Module 1: Profile Header */
+        .profile-card { grid-column: span 4; }
+        .profile-card h1 { 
+            font-size: 3rem; margin: 0; font-weight: 700; letter-spacing: -2px; 
+            background: linear-gradient(to right, #fff, var(--accent-1));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Module 2: LeetCode Stat */
+        .stat-card { grid-column: span 2; display: flex; flex-direction: column; justify-content: center; }
+        .val { font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 700; color: var(--accent-3); }
+        .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 8px; font-family: 'JetBrains Mono'; }
+
+        /* Module 3: Rank */
+        .rank-card { grid-column: span 2; border-bottom: 4px solid var(--accent-2); }
+
+        /* Module 4: Skills Section */
+        .skills-card { grid-column: span 4; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+        .skill-node {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* INVERT ZOOM HOVER (Per Request) */
+        .skill-node:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.1) translateY(-2px);
+            font-weight: 700;
+            box-shadow: none; /* No shadow as requested */
+        }
+
+        /* Module 5: Links Row */
+        .link-btn {
+            grid-column: span 3;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .link-btn:hover { background: #fff; color: #000; }
+
+        /* Responsiveness */
+        @media (max-width: 900px) {
+            .main-frame { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+            .profile-card, .stat-card, .rank-card, .skills-card, .link-btn { grid-column: span 6; }
+            .profile-card h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-frame">
+    <div class="card profile-card">
+        <div class="label">System Core</div>
+        <h1>GENESIS_NODE</h1>
+        <p style="color: var(--text-dim); margin: 15px 0 0 0;">Engineering student specializing in high-efficiency logic and algorithmic structures.</p>
+    </div>
+
+    <div class="card stat-card">
+        <div class="label">Solved Tasks</div>
+        <div class="val">124<span style="font-size: 1.2rem; color: var(--text-dim);">/3837</span></div>
+    </div>
+
+    <div class="card rank-card">
+        <div class="label">Global Rank</div>
+        <div class="val" style="color: var(--accent-2);">#11,92,461</div>
+    </div>
+
+    <div class="card skills-card">
+        <div class="label">Primary Stack</div>
+        <div class="skills-grid">
+            <div class="skill-node">C / C++</div>
+            <div class="skill-node">Python</div>
+            <div class="skill-node">Java</div>
+            <div class="skill-node">Data Structures</div>
+            <div class="skill-node">Algorithms</div>
+            <div class="skill-node">Django</div>
+            <div class="skill-node">Numpy</div>
+            <div class="skill-node">Maths</div>
+            <div class="skill-node">HTML</div>
+            <div class="skill-node">CSS</div>
+            <div class="skill-node">Js</div>
+        </div>
+    </div>
+
+    <a href="https://github.com/krish50507kumar" target="_blank" class="link-btn">GITHUB</a>
+<a href="https://www.linkedin.com/in/krish-kumar-194426349" target="_blank" class="link-btn">LINKEDIN</a>
+<a href="https://www.instagram.com/this.is._krish?igsh=MW14YzU0MmU2ZzVvMw==" target="_blank" class="link-btn">INSTAGRAM</a>
+<a href="https://leetcode.com/u/Krish6399kumar/" target="_blank" class="link-btn">LEETCODE</a>
+</div>
+
+</body>
+</html>
