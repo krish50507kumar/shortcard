@@ -1,4 +1,4 @@
-# shortcard
+
 🛸 [KRISH_KUMAR] | GENESIS_NODE
 Engineering Student & Logic Architect
 
@@ -7,7 +7,7 @@ I specialize in high-efficiency logic and algorithmic structures, focusing on th
 
     Primary Focus: Data Structures, Algorithms, and High-Performance Logic.
 
-    Core Languages: C/C++, Python, JavaScript.
+    Core Languages: C/C++, Python, Java.
 
     Web Architecture: HTML5, CSS3, Django.
 
